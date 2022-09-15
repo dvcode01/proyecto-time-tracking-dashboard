@@ -29,7 +29,7 @@ function menuOnClick(e){
     updateCards(timeframe);
 }
 
-async function obtenerDatos(){
+async function getInformation(){
 
     const fetchResult = await fetch('../data/data.json');
     const result = await fetchResult.json();
@@ -50,7 +50,7 @@ async function obtenerDatos(){
     cardElements = document.querySelectorAll('.section-2__card'); 
 }
 
-obtenerDatos();
+getInformation();
 
 
 function createCard(element, timeframe){

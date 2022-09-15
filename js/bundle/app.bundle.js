@@ -33,12 +33,12 @@ function menuOnClick(e) {
   updateCards(timeframe);
 }
 
-function obtenerDatos() {
-  return _obtenerDatos.apply(this, arguments);
+function getInformation() {
+  return _getInformation.apply(this, arguments);
 }
 
-function _obtenerDatos() {
-  _obtenerDatos = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+function _getInformation() {
+  _getInformation = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
     var fetchResult, result, res;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -78,10 +78,10 @@ function _obtenerDatos() {
       }
     }, _callee);
   }));
-  return _obtenerDatos.apply(this, arguments);
+  return _getInformation.apply(this, arguments);
 }
 
-obtenerDatos();
+getInformation();
 
 function createCard(element, timeframe) {
   var title = element['title'].toLowerCase();
