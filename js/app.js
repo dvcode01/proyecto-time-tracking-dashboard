@@ -29,28 +29,22 @@ function menuOnClick(e){
     updateCards(timeframe);
 }
 
-async function getInformation(){
-
-    const fetchResult = await fetch('../data/data.json');
-    const result = await fetchResult.json();
-    const res = await result;
-
-    // creando las cards
-    res.forEach(elem => {
-        secondSection.insertAdjacentHTML('beforeend', createCard(elem, timeframe));       
-    })
+fetch('../data/data.json')
+    .then(res => res.json())
+    .then(res => {
+         // creando las cards
+        res.forEach(elem => {
+            secondSection.insertAdjacentHTML('beforeend', createCard(elem, timeframe));       
+        })
     
-    // convertir el array
-    res.forEach(elem => {
-        data[elem.title] = elem.timeframes;
-        console.log(data);
-    })
-    
-    // hace referencia a los elementos ya creados
-    cardElements = document.querySelectorAll('.section-2__card'); 
-}
+        // convertir el array
+        res.forEach(elem => {
+            data[elem.title] = elem.timeframes;
+        })
 
-getInformation();
+        // hace referencia a los elementos ya creados
+        cardElements = document.querySelectorAll('.section-2__card');    
+    })
 
 
 function createCard(element, timeframe){
